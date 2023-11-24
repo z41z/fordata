@@ -1,0 +1,29 @@
+{
+  "name": "fordata",
+  "version": "1.0.1",
+  "description": "Easy data to handle by prototype",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production"
+  },
+  "keywords": [
+    "fordata",
+    "EasyData",
+    "data-utils",
+    "treedata",
+    "datatree",
+    "datetime",
+    "format"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z41z/fordata.git"
+  },
+  "homepage": "https://github.com/z41z/fordata#readme",
+  "author": "z41z",
+  "license": "MIT",
+  "devDependencies": {
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
