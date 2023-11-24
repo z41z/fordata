@@ -1,6 +1,6 @@
 # ForData
 
-Easy data to handle by prototype.
+Easy handle data by prototype for TreeData、Array、Date、Encode、String etc..
 
 ## Install
 
