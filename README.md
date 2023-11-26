@@ -290,7 +290,7 @@ new DateTime()
       new Date().getRangeMonth()
       // { start: '2023-07-01 00:00:00', end: '2023-07-31 23:59:59' }
     ```
-  - ##### getRangeWeek()
+  - ##### getRangeWeek(startMonday = true)
     ``` js
       new Date().getRangeWeek()
       // { start: '2023-07-24 00:00:00', end: '2023-07-30 23:59:59' }
