@@ -17,12 +17,12 @@ module.exports = class {
     return this
   }
   prev() {
-    Date.prototype.prev = function (timestamp) {
+    Date.prototype.prev = function(timestamp) {
       return new Date(+this - timestamp).format('yyyy-MM-dd hh:mm:ss')
     }
   }
   prevDay() {
-    Date.prototype.prevDay = function (options = { day: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.prevDay = function(options = { day: 1, isShowAll: false, includeCurrent: false }) {
       let { day = 1, isShowAll = false, includeCurrent = false } = options
       if ((!isShowAll) && !includeCurrent) {
         return new Date(+this - day * 1e3 * 60 * 60 * 24).format('yyyy-MM-dd hh:mm:ss')
@@ -39,7 +39,7 @@ module.exports = class {
     }
   }
   prevMonth() {
-    Date.prototype.prevMonth = function (options = { month: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.prevMonth = function(options = { month: 1, isShowAll: false, includeCurrent: false }) {
       let { month = 1, isShowAll = false, includeCurrent = false } = options
       let currentMonth = this.getMonth() + 1
       let days = this.getDays()
@@ -60,7 +60,7 @@ module.exports = class {
     }
   }
   prevYear() {
-    Date.prototype.prevYear = function (options = { year: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.prevYear = function(options = { year: 1, isShowAll: false, includeCurrent: false }) {
       let { year = 1, isShowAll = false, includeCurrent = false } = options
       let currentYear = this.getFullYear()
       if ((!isShowAll) && !includeCurrent) {
@@ -74,12 +74,12 @@ module.exports = class {
     }
   }
   next() {
-    Date.prototype.next = function (timestamp) {
+    Date.prototype.next = function(timestamp) {
       return new Date(+this + timestamp).format('yyyy-MM-dd hh:mm:ss')
     }
   }
   nextDay() {
-    Date.prototype.nextDay = function (options = { day: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.nextDay = function(options = { day: 1, isShowAll: false, includeCurrent: false }) {
       let { day = 1, isShowAll = false, includeCurrent = false } = options
       if ((!isShowAll) && !includeCurrent) {
         return new Date(+this + day * 1e3 * 60 * 60 * 24).format('yyyy-MM-dd hh:mm:ss')
@@ -96,7 +96,7 @@ module.exports = class {
     }
   }
   nextMonth() {
-    Date.prototype.nextMonth = function (options = { month: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.nextMonth = function(options = { month: 1, isShowAll: false, includeCurrent: false }) {
       let { month = 1, isShowAll = false, includeCurrent = false } = options
       let days = this.getDays()
       if ((!isShowAll) && !includeCurrent) {
@@ -117,7 +117,7 @@ module.exports = class {
     }
   }
   nextYear() {
-    Date.prototype.nextYear = function (options = { year: 1, isShowAll: false, includeCurrent: false }) {
+    Date.prototype.nextYear = function(options = { year: 1, isShowAll: false, includeCurrent: false }) {
       let { year = 1, isShowAll = false, includeCurrent = false } = options
       let currentYear = this.getFullYear()
       if ((!isShowAll) && !includeCurrent) {
@@ -140,7 +140,7 @@ module.exports = class {
     return results.map(item => item.format('yyyy-MM-dd hh:mm:ss'))
   }
   format() {
-    Date.prototype.format = function (fmt) {
+    Date.prototype.format = function(fmt) {
       let o = {
         'M+': this.getMonth() + 1, //月份
         'd+': this.getDate(), //日
@@ -190,12 +190,12 @@ module.exports = class {
     }
   }
   getWeek() {
-    Date.prototype.getWeek = function (weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']) {
+    Date.prototype.getWeek = function(weeks = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']) {
       return weeks[this.getDay()]
     }
   }
   getRangeYear() {
-    Date.prototype.getRangeYear = function () {
+    Date.prototype.getRangeYear = function() {
       let year = this.getFullYear()
       return {
         start: `${year}-01-01 00:00:00`,
@@ -204,9 +204,9 @@ module.exports = class {
     }
   }
   getRangeMonth() {
-    Date.prototype.getRangeMonth = function () {
+    Date.prototype.getRangeMonth = function() {
       let startTime = this.format('yyyy-MM-01 00:00:00')
-      let days = new Date(+new Date(this.format(`yyyy-${this.getMonth() + 2}-01 00:00:00`)) - 1).getDate()
+      let days = new Date(+new Date(this.format(`yyyy-${(this.getMonth() + 2) % 12}-01 00:00:00`)) - 1).getDate()
       return {
         start: startTime,
         end: new Date(startTime).format(`yyyy-MM-${days} 23:59:59`)
@@ -214,7 +214,7 @@ module.exports = class {
     }
   }
   getRangeWeek(startMonday = true) {
-    Date.prototype.getRangeWeek = function () {
+    Date.prototype.getRangeWeek = function() {
       let day = this.getDay()
       if (startMonday) {
         day = day ? day : 7
@@ -226,7 +226,7 @@ module.exports = class {
     }
   }
   getDays() {
-    Date.prototype.getDays = function () {
+    Date.prototype.getDays = function() {
       return new Date(+new Date(this.format(`yyyy-${this.getMonth() + 2}-01 00:00:00`)) - 1).getDate()
     }
   }

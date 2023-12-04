@@ -362,3 +362,21 @@ new DateTime()
   ``` js
   [{ a: 1 }, { b: 2 }, { a: 2 }, { a: 3 }, { a: 1 }, { b: 2 }, { b: 1 }, { c: 1 }].groupByName('a')
   ```
+
+- #### EasyString
+  ``` js
+  const { EasyString } = require("fordata")
+  new EasyString()
+  ```
+  - ##### getInfoByIdCard()
+  ``` js
+  '510101199911111111'.getInfoByIdCard()
+  // {
+  //   areaCode: '510101',
+  //   year: '1999',
+  //  month: '11',
+  //   day: '11',
+  //  gender: 'male',
+  //   age: 24
+  // }
+  ```
