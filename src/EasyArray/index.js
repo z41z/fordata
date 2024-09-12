@@ -7,6 +7,7 @@ module.exports = class {
     Array.prototype.unique = this.unique
     Array.prototype.groupByLength = this.groupByLength
     Array.prototype.groupByName = this.groupByName
+    Array.prototype.groupByValue = this.groupByValue
   }
   // 创建数组
   create(length = 1, cb = () => null) {
@@ -78,5 +79,19 @@ module.exports = class {
       }
     })
     return Object.values(result).reverse()
+  }
+  // 按某个key的值分组
+  groupByValue(name) {
+    let result = {}
+    this.forEach(item => {
+      if (item[name] !== undefined) {
+        if (result[item[name]]) {
+          result[item[name]].push(item)
+        } else {
+          result[item[name]] = [item]
+        }
+      }
+    })
+    return result
   }
 }

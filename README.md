@@ -362,6 +362,11 @@ new DateTime()
   ``` js
   [{ a: 1 }, { b: 2 }, { a: 2 }, { a: 3 }, { a: 1 }, { b: 2 }, { b: 1 }, { c: 1 }].groupByName('a')
   ```
+  - ##### groupByValue()
+  ``` js
+  [{ a: 1 }, { b: 2 }, { a: 2 }, { a: 3 }, { a: 1 }, { b: 2 }, { b: 1 }, { c: 1 }].groupValue('a')
+  // { '1': [ { a: 1 }, { a: 1 } ], '2': [ { a: 2 } ], '3': [ { a: 3 } ] }
+  ```
 
 - #### EasyString
   ``` js
