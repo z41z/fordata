@@ -206,7 +206,7 @@ module.exports = class {
   getRangeMonth() {
     Date.prototype.getRangeMonth = function() {
       let startTime = this.format('yyyy-MM-01 00:00:00')
-      let days = new Date(+new Date(this.format(`yyyy-${(this.getMonth() + 2) % 12}-01 00:00:00`)) - 1).getDate()
+      let days = new Date(this.getFullYear(), this.getMonth() + 1, 0).getDate()
       return {
         start: startTime,
         end: new Date(startTime).format(`yyyy-MM-${days} 23:59:59`)
@@ -227,7 +227,7 @@ module.exports = class {
   }
   getDays() {
     Date.prototype.getDays = function() {
-      return new Date(+new Date(this.format(`yyyy-${this.getMonth() + 2}-01 00:00:00`)) - 1).getDate()
+      return new Date(this.getFullYear(), this.getMonth() + 1, 0).getDate()
     }
   }
 }
