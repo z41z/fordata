@@ -1,7 +1,8 @@
 module.exports = class {
   constructor() {
     String.prototype.toBase64 = this.toBase64
-    String.prototype.toStr = this.toStr
+    String.prototype.toBase64 = this.toBase64
+    String.prototype.base64ToString = this.base64ToString
     String.prototype.toEntity = this.toEntity
     String.prototype.entityToString = this.entityToString
     String.prototype.encodeURL = this.encodeURL
